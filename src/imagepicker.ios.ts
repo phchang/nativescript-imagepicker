@@ -1,8 +1,10 @@
 import * as data_observable from "tns-core-modules/data/observable";
 import * as imageAssetModule from "tns-core-modules/image-asset";
-import { Options, ImagePickerMediaType } from "./imagepicker.common";
-import { View } from "tns-core-modules/ui/core/view/view";
+import {Options} from "./imagepicker.common";
+import {View} from "tns-core-modules/ui/core/view/view";
 import * as utils from "tns-core-modules/utils/utils";
+import {ModalPresentationStyle} from "./index";
+
 export * from "./imagepicker.common";
 
 const defaultAssetCollectionSubtypes: NSArray<any> = NSArray.arrayWithArray(<any>[
@@ -55,6 +57,7 @@ export class ImagePicker extends data_observable.Observable {
         imagePickerController.numberOfColumnsInPortrait = options.numberOfColumnsInPortrait || imagePickerController.numberOfColumnsInPortrait;
         imagePickerController.numberOfColumnsInLandscape = options.numberOfColumnsInLandscape || imagePickerController.numberOfColumnsInLandscape;
         imagePickerController.prompt = options.prompt || imagePickerController.prompt;
+        imagePickerController.modalPresentationStyle = options.modalPresentationStyle ? <ModalPresentationStyle>options.modalPresentationStyle.valueOf() : ModalPresentationStyle.Automatic.valueOf();
 
         this._imagePickerController = imagePickerController;
     }

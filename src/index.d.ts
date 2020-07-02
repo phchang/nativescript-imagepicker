@@ -26,6 +26,13 @@ export declare const enum ImagePickerMediaType {
     Video = 2
 }
 
+export declare const enum ModalPresentationStyle {
+    Automatic = -2,
+    FullScreen = 0,
+    PageSheet = 1,
+    FormSheet = 2,
+}
+
 /**
  * Provide options for the image picker.
  */
@@ -36,7 +43,7 @@ interface Options {
     mode?: string;
 
     /**
-    * Set the minumum number of selected assets in iOS
+    * Set the minimum number of selected assets in iOS
     */
     minimumNumberOfSelection?: number;
 
@@ -75,6 +82,11 @@ interface Options {
      * Not supported officially, see https://issuetracker.google.com/issues/72053350 |
      */
     showAdvanced?: boolean;
+
+    /**
+     * Set presentation style of the image picker view in iOS
+     */
+    modalPresentationStyle?: ModalPresentationStyle;
 
     android?: {
         /**

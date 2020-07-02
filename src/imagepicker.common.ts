@@ -1,3 +1,5 @@
+import {ModalPresentationStyle} from "./index";
+
 export enum ImagePickerMediaType {
     Any = 0,
     Image = 1,
@@ -53,6 +55,12 @@ export interface Options {
      * Not supported officially, see https://issuetracker.google.com/issues/72053350 |
      */
     showAdvanced?: boolean;
+
+    // todo why is this second declaration necessary?
+    /**
+     * Set presentation style of the image picker view in iOS
+     */
+    modalPresentationStyle?: ModalPresentationStyle;
 
     android?: {
         /**
